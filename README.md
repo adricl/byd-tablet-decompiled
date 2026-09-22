@@ -1,4 +1,4 @@
-# byd-tablet-decompiled: Decompiled all BYD apps from the on car tablet to allow for Android Dev 
+# byd-tablet-decompiled: Decompiled all BYD apps from an BYD Atto 3 running DiLink 3.0 from the car tablet to allow for Android Dev 
 
 # What?: 
 * List of all the BYD apps from the Car Tablet and what each app does based on the decompilation
