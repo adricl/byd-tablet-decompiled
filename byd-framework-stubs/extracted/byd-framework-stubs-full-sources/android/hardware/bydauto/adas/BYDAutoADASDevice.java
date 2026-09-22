@@ -1,0 +1,469 @@
+package android.hardware.bydauto.adas;
+
+/** Permissions: {@code android.permission.BYDAUTO_ADAS_GET}, {@code android.permission.BYDAUTO_ADAS_SET} */
+public final class BYDAutoADASDevice extends android.hardware.bydauto.AbsBYDAutoDevice {
+    public static final int ABS_TCS_ESP_ACC_AEB_ACTIVE = 9;
+    public static final int ADAS_COMMAND_BUSY = -2147482647;
+    public static final int ADAS_COMMAND_FAILED = -2147482648;
+    public static final int ADAS_COMMAND_INVALID_VALUE = -2147482645;
+    public static final int ADAS_COMMAND_SUCCESS = 0;
+    public static final int ADAS_COMMAND_TIMEOUT = -2147482646;
+    public static final int ADAS_INVALID = 0;
+    protected static final int ADAS_SLA_STATE_DEFECT = 4;
+    protected static final int ADAS_SLA_STATE_FUSION_MODE = 1;
+    protected static final int ADAS_SLA_STATE_NV_ONLY_MODE = 3;
+    protected static final int ADAS_SLA_STATE_OFF = 0;
+    protected static final int ADAS_SLA_STATE_VISION_MODE = 2;
+    public static final int ADAS_VALID = 1;
+    public static final int ANY_DOOR_OPEN = 3;
+    public static final int APS_FAILURE = 5;
+    public static final int APS_TIME_OUT = 16;
+    public static final int AUTO_ESP_STATE_OFF = 1;
+    public static final int AUTO_ESP_STATE_ON = 0;
+    protected static final int AUTO_HOLD_STATE1 = 0;
+    protected static final int AUTO_HOLD_STATE2 = 1;
+    protected static final int AUTO_HOLD_STATE3 = 2;
+    protected static final int AUTO_HOLD_STATE4 = 3;
+    public static final int AUTO_IBOOSTER_STATE_COMFORTABLE = 2;
+    public static final int AUTO_IBOOSTER_STATE_SPORT = 1;
+    public static final int AUTO_IBOOSTER_STATE_STANDARD = 0;
+    public static final int AVM_APA_FAULT = 3;
+    public static final int AVM_FUNCTION_OFF = 1;
+    public static final int AVM_FUNCTION_ON = 2;
+    public static final int BLUETOOTH_DISCONNECT = 7;
+    public static final int BLUETOOTH_DISCONNECT_TIMEOUT = 19;
+    public static final int BRAKE_FOOT_SENSE_COMFORTABLE = 2;
+    public static final int BRAKE_FOOT_SENSE_COMFORTABLE_GET = 0;
+    public static final int BRAKE_FOOT_SENSE_COMFORTABLE_SET = 2;
+    public static final int BRAKE_FOOT_SENSE_INVALID = 3;
+    public static final int BRAKE_FOOT_SENSE_INVALID_SET = 0;
+    public static final int BRAKE_FOOT_SENSE_SPORT = 1;
+    public static final int BRAKE_FOOT_SENSE_STANDARD = 0;
+    public static final int BRAKE_FOOT_SENSE_STANDARD_GET = 1;
+    public static final int BRAKE_FOOT_SENSE_STANDARD_SET = 1;
+    public static final int BRAKING_PEDAL = 4;
+    public static final int BSD_STATIC_CALIBRATION_INVALID = 0;
+    public static final int BSD_STATIC_CALIBRATION_START = 1;
+    public static final int CHARGING_GUN_ACTIVE = 12;
+    public static final int CHOOSE_PARK_MODE = 7;
+    public static final int CLEANING_CAMERA = 9;
+    public static final int CLEAR_AHEAD = 5;
+    public static final int CLOSE_HOOD = 8;
+    public static final int CLOSE_TRUNK = 9;
+    public static final int CONFIRM_PARKING_OUT_DIRECTION = 3;
+    public static final int CONNECT_BLUETOOTH_TO_CONTROL = 8;
+    public static final int CST_STATE_ACTIVE_GET = 2;
+    public static final int CST_STATE_DISABLED_GET = 0;
+    public static final int CST_STATE_FAILURE_GET = 3;
+    public static final int CST_STATE_STANDBY_GET = 1;
+    protected static final int CST_SWITCH_INVALID_SET = 0;
+    protected static final int CST_SWITCH_OFF_SET = 2;
+    protected static final int CST_SWITCH_ON_SET = 1;
+    public static final int CURRENT_STEP_NUMBER_OVER_THRESHOLD = 14;
+    public static final int DEVICE_HAS_THE_FEATURE = 1;
+    public static final int DEVICE_NOT_HAS_THE_FEATURE = 0;
+    public static final int DEVICE_THE_FEATURE_LINK_ERROR = 65535;
+    public static final int DEVICE_THE_FEATURE_NEVER_GET = 2;
+    public static final int DRIVER_OVERRIDE = 11;
+    public static final int EPB_ACTIVE = 10;
+    public static final int EPB_FAILURE = 20;
+    public static final int EPS_FAILURE = 1;
+    public static final int ESC_FAILURE = 2;
+    public static final int ESP_KEY_NO_ACTION = 0;
+    public static final int ESP_KEY_PRESSED = 1;
+    public static final int ESP_OFFLINE = 3;
+    public static final int ESP_WITHOUT_HARD_SWITCH = 2;
+    public static final int ESP_WITH_HARD_SWITCH = 1;
+    public static final String FEATURE_ADAS_AVH = "AVH";
+    public static final String FEATURE_ADAS_BRAKE_FOOT_SENSE = "BrakeFootSense";
+    public static final String FEATURE_ADAS_CST = "CST";
+    public static final String FEATURE_ADAS_ESP = "ESP";
+    public static final String FEATURE_ADAS_HDC = "HDC";
+    public static final String FEATURE_ADAS_LDW = "LDW";
+    public static final String FEATURE_ADAS_LKS = "LKS";
+    public static final String FEATURE_ADAS_TJA = "TJA";
+    public static final String FEATURE_AEB = "AutomaticEmergencyBrake";
+    public static final String FEATURE_BSD = "BlindSpotDetection";
+    public static final String FEATURE_HMA = "IntelligentFarAndNearLight";
+    public static final String FEATURE_LDSW = "LaneDepartureWarning";
+    public static final String FEATURE_LKS_MODE = "LaneKeepingAssistMode";
+    public static final String FEATURE_LKS_SENSITIVITY = "LaneKeepingAssistSensitivity";
+    public static final String FEATURE_PCW = "PredictionCollisionWarning";
+    public static final String FEATURE_SLA = "TrafficSignRecognition";
+    public static final int FINISH_PARKING = 2;
+    public static final int FUNCATION_DEFECT = 2;
+    public static final int FUNCATION_OFF = 0;
+    public static final int FUNCATION_ON = 1;
+    public static final int HDC_FUNCTION_INVALID = 0;
+    public static final int HDC_FUNCTION_OFF = 2;
+    public static final int HDC_FUNCTION_ON = 1;
+    protected static final int HDC_STATE_OFFLINE = 3;
+    protected static final int HDC_STATE_OFF_NO_LAMP = 0;
+    protected static final int HDC_STATE_ON_LAMP_FLASH = 2;
+    protected static final int HDC_STATE_ON_LAMP_ON = 1;
+    public static final int HMA_STATE_ACTIVE = 3;
+    public static final int HMA_STATE_CAMERA_BLOCKED = 5;
+    public static final int HMA_STATE_FAULT = 4;
+    public static final int HMA_STATE_OFF = 0;
+    public static final int HMA_STATE_PASSIVE = 1;
+    public static final int HMA_STATE_STANDBY = 2;
+    public static final int INTERRUPT_NUMBER_OVER_THRESHOLD = 15;
+    public static final int INVALID_BRAKE_PEDAL_SWITCH_STATE = 7;
+    public static final int INVALID_VEHICLE_SPEED = 6;
+    public static final int IS_PARKING = 1;
+    public static final int IS_PARKING_OUT = 4;
+    public static final int LDSW_TYPE_ALL = 2;
+    public static final int LDSW_TYPE_SOUND = 1;
+    public static final int LDSW_TYPE_VIBRATE = 0;
+    public static final int LDW_STATIC_CALIBRATION_INVALID = 0;
+    public static final int LDW_STATIC_CALIBRATION_START = 1;
+    public static final int LKS_MODE_ALL = 3;
+    public static final int LKS_MODE_DIVERGE = 1;
+    public static final int LKS_MODE_KEEPING = 2;
+    public static final int LKS_MODE_OFF = 0;
+    public static final int LKS_MODE_OPEN = 4;
+    public static final int LKS_SENSITIVITY_INTELLIGENCE = 0;
+    public static final int LKS_SENSITIVITY_STANDARD = 1;
+    public static final int MIRROR_FOLD = 5;
+    public static final int NOT_READY = 0;
+    public static final int NO_FAULT = 0;
+    public static final int NO_INTERRUPTION = 0;
+    public static final int OBSTACLE_ON_PATH = 2;
+    public static final int OPEN_MAIN_DOOR = 29;
+    public static final int PAUSE_AUTO_PARKING_ON = 1;
+    public static final int PRESS_INVALID = 0;
+    public static final int PRESS_VALID = 1;
+    public static final int READY = 1;
+    public static final int RESET_INVALID = 0;
+    public static final int RESET_ITEM_DRIVE = 2;
+    public static final int RESET_ITEM_LKS_LDWS = 1;
+    public static final int RESET_ITEM_SAFETY = 0;
+    public static final int RESET_VALID = 1;
+    public static final int RETAIN = 6;
+    public static final int ROUTE_PLANNING_FAILURE = 18;
+    public static final int SAS_FAILURE = 4;
+    public static final int SAS_NOT_CALIBRATED = 8;
+    public static final int SCU_FAILURE = 3;
+    public static final int SEAT_BELT_RELEASED = 6;
+    public static final int SLOT_SEARCHING = 1;
+    public static final int SPACE_IN_PARKOUT_MODE_LIMITED = 13;
+    protected static final String TAG = "BYDAutoADASDevice";
+    public static final int TJA_INVALID = 0;
+    public static final int TJA_OFF = 1;
+    public static final int TJA_ON = 2;
+    public static final int TJA_STATE_ACTIVE1 = 2;
+    public static final int TJA_STATE_ACTIVE2 = 3;
+    public static final int TJA_STATE_FAULT = 4;
+    public static final int TJA_STATE_OFF = 0;
+    public static final int TJA_STATE_PASSIVE = 1;
+    public static final int UNFASTEN_SEAT_BELT = 21;
+    public static final int VEHICLE_SPEED_OVER_THRESHOL = 17;
+    public static final int WAITING_FOR_DRIVER_OPERATE_GEAR = 4;
+    public static final int WAITING_FOR_VEHICLE_DRIVER_CONFIRM_PARK = 5;
+    public static final int WAITING_FOR_VEHICLE_SLOW_DOWN = 3;
+    public static final int WAITING_FOR_VEHICLE_STOP = 2;
+    protected final int HDC_SWITCH_INVALID = Integer.valueOf(0).intValue();
+    protected final int HDC_SWITCH_OFF = Integer.valueOf(0).intValue();
+    protected final int HDC_SWITCH_ON = Integer.valueOf(0).intValue();
+
+    BYDAutoADASDevice() { super((android.content.Context) null); throw new RuntimeException("Stub!"); }
+
+    /** <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it. */
+    @Deprecated
+    public int get123State() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AEB_STATE} (0x32d0002c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAEBState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVH_STATE} (0x12200046).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAVHState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_SWITCH} (0x1d100026).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAVMSwitchState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_ABORT_REASON} (0x1d100013).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAbortReason() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_ACTIVE} (0x1d100020).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getActive() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_KEY} (0x4a900014).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAutoParkButtonState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_AUTOSEARCH_STATE} (0x1d100010).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getAutoSearchState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_BSD_STATE} (0x41800008).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getBSDState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_BRAKE_FOOT_SENSE} (0x1230000d).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getBrakeFootSenseState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_CST_SWITCH} (0x0d500018).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getCSTData() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_CST_SWITCH} (0x0d500018).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getCSTState() { throw new RuntimeException("Stub!"); }
+    public int getDevicetype() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_HAS_ESP} (0x3210003a).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getESPOnlineState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_ESP_STATE} (0x1230003c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getESPState() { throw new RuntimeException("Stub!"); }
+    public int[] getFeatureList() { throw new RuntimeException("Stub!"); }
+    public String getGetPermission() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_ADAS_HDC_KEY} (0x4a900036).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getHDCKeyState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_HDC_STATE} (0x12300031).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getHDCState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_HMA_STATE} (0x31600008).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getHMAState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_IBOOSTER_STATE} (0x000d0a58).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getIboosterState() { throw new RuntimeException("Stub!"); }
+    public static synchronized android.hardware.bydauto.adas.BYDAutoADASDevice getInstance(android.content.Context con) { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_INTERACTIVE_HINT} (0x1d10000c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getInterActiveHint() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_LDSW_TYPE} (0x31600038).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getLDSWType() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_LKS_MODE} (0x3160000e).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getLKSMode() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_LKS_SENSITIVITY} (0x31600010).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getLKSSensitivity() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_LANE_OFFSET_KEY} (0x4a900010).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getLaneOffsetState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_PCW_STATE} (0x32d0001a).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getPCWState() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_SLA_STATE} (0x31600025).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getSLAState() { throw new RuntimeException("Stub!"); }
+    public String getSetPermission() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_AVM_APA_SUSPEND} (0x1d100008).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getSuspen() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_TJA_ICA_STATE_hal_only} (0xb160002c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int getTJAState() { throw new RuntimeException("Stub!"); }
+    public int getType() { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_CST_ONLINE} (0x0d50001e), {@code ADAS_HAS2_FCW} (0x4320000a), {@code ADAS_HAS2_AEB} (0x43200009), {@code ADAS_HAS_LKS_MODE} (0x000b37c5), {@code ADAS_HAS_LKS_SENSITIVITY} (0x0001b109), {@code ADAS_HAS_LDSW} (0x43200014), {@code ADAS_HAS_BSD} (0x41800000), {@code ONLINE_HAS_0x041800} (0x41800000), {@code ADAS_HAS2_SLA} (0x4320000e), {@code ADAS_HAS2_HMA} (0x4320000b), {@code ADAS_HAS_AVH} (0x32100038), {@code ADAS_HAS_ESP} (0x3210003a), {@code ADAS_CMD_HDC_STATE} (0x12300031).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int hasFeature(String feature) { throw new RuntimeException("Stub!"); }
+    /**
+     * Reads feature ID {@code ADAS_CMD_CST_ONLINE} (0x0d50001e), {@code ADAS_HAS2_LDW} (0x4320000c), {@code ADAS_HAS2_LKS} (0x4320000d), {@code ADAS_HAS2_TJA} (0x4320000f).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int hasFeature2(String feature) { throw new RuntimeException("Stub!"); }
+    public boolean postEvent(int device_type, int event_type, int value, Object data) { throw new RuntimeException("Stub!"); }
+    public void registerListener(android.hardware.bydauto.adas.AbsBYDAutoADASListener l) { throw new RuntimeException("Stub!"); }
+    public void registerListener(android.hardware.bydauto.adas.AbsBYDAutoADASListener l, int[] featureIDs) { throw new RuntimeException("Stub!"); }
+    /** <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it. */
+    @Deprecated
+    public int reset(int item, int value) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_AEB_STATE_SET} (0x3850002c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setAEBState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_AVH_STATE_SET} (0x3850000a).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setAVHState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_AVM_APA_SWITCH_SET} (0x3850001a).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setAVMSwitchState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_SAFETY_RESET_SET} (0x3e30003f), {@code ADAS_LKS_LDWS_RESET_SET} (0x3e300041), {@code ADAS_DRIVE_RESET_SET} (0x3e300040).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setAdasReset(int safetyResetState, int lksLdwsResetState, int driveResetState) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code BODYWORK_AUTO_TYPE} (0x40d00010), {@code ADAS_BSD_CONFIG} (0x4530000c), {@code ADAS_BSD_STATE_SET} (0x38500030), {@code ADAS_RCTA_STATE_SET} (0x3850000e), {@code ADAS_DOW_STATE_SET} (0x38500012), {@code ADAS_ECTB_STATE_SET} (0x3850001e).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setBSDState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_BSD_STATIC_CALIBRATION_SET} (0x38500032).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setBSDStaticCalibration(int value) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_CMD_BRAKE_FOOT_SENSE_SET} (0x3850000c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setBrakeFootSenseState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_CMD_CST_SWITCH_SET} (0x38500018).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setCSTState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_ESP_STATE_SET} (0x38500008).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setESPState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_CMD_HDC_SWITCH_SET} (0x38500016).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setHDCState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_HMA_STATE_SET} (0x38500020).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setHMAState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_IBOOSTER_STATE_SET} (0x3850000c).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setIboosterState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_LDSW_TYPE_SET} (0x3850002e).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setLDSWType(int type) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_LDW_STATIC_CALIBRATION_SET} (0x38500033).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setLDWStaticCalibration(int value) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_LKS_MODE_SET} (0x38500028).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setLKSMode(int mode) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_LKS_SENSITIVITY_SET} (0x38500024).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setLKSSensitivity(int sensitivity) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_PCW_STATE_SET} (0x38500026).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setPCWState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_SLA_STATE_SET} (0x38500022).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setSLAState(int state) { throw new RuntimeException("Stub!"); }
+    /**
+     * Writes feature ID {@code ADAS_TJA_ICA_SWITCH_SET} (0x38500014).
+     * <b>Hidden API (blacklist):</b> normal apps get NoSuchMethodError / NoSuchFieldError; only system/platform apps, or a device with hidden_api_policy relaxed, can use it.
+     */
+    @Deprecated
+    public int setTJAState(int state) { throw new RuntimeException("Stub!"); }
+    public void unregisterListener(android.hardware.bydauto.adas.AbsBYDAutoADASListener l) { throw new RuntimeException("Stub!"); }
+}
