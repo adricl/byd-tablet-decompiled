@@ -1,4 +1,4 @@
-# BYD Tablet Decompiled: Decompiled all BYD apps from an BYD Atto 3 running DiLink 3.0 from the car tablet to allow for Android Dev 
+# BYD Tablet Decompiled: Decompiled all BYD apps from an BYD Atto 3 running DiLink 3.0 from the car tablet to allow for Android Development
 
 # Why?
 I have been wanting to build an app for the BYD in car tablet but the device has security blocking getting any data from car. 
@@ -35,4 +35,12 @@ dependencies {
     compileOnly(files("libs/byd-framework-stubs.jar"))
 }
 ```
+# Disclaimer
+
+The software in this repository is provided **"as is"**, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. 
+
+In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+
+## Use at Your Own Risk
+You are solely responsible for determining the appropriateness of using or redistributing this software and assume any risks associated with your exercise of permissions under this project.
 
