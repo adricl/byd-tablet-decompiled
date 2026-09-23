@@ -3,7 +3,7 @@
 # Why?
 I have been wanting to build an app for the BYD in car tablet but the device has security blocking getting any data from car. 
 I wanted to see what the % of break vs regenerative breaking but now have tried to understand how the Car System is working.
-There is also no SDK for android so I have built one. 
+There is also no open SDK for android so I have built one. 
 
 # What?: 
 * [List of all the BYD apps and what they do](https://github.com/adricl/byd-tablet-decompiled/blob/main/BYD_apps.md) and what each app does based on the decompilation
